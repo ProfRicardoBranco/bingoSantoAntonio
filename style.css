@@ -1,21 +1,20 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-}
-
-.container {
+    padding: 0;
     display: flex;
-    width: 80%;
+    height: 100vh;
 }
 
-#sortearBtn {
+.column {
+    height: 100%;
+}
+
+#blueColumn {
     width: 20%;
-    height: 50px; /* Altura do botão */
+    background-color: blue;
 }
 
-#bingoTable {
-    width: 80%;
+#yellowColumn {
+    flex: 1;
+    background-color: yellow;
 }
