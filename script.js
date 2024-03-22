@@ -9,7 +9,7 @@ for (let i = 1; i <= 100; i++) {
     }
     const cell = row.insertCell();
     cell.textContent = i;
-    cell.style.padding = '10px'; // Adiciona espaçamento interno
+    cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
 }
