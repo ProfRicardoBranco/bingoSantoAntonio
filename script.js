@@ -1,6 +1,5 @@
 const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
-const fontSizeSelect = document.getElementById('font-size');
 let numerosSorteados = [];
 
 // Preencher a tabela com os números de 1 a 100 em uma grade 10x10
@@ -10,7 +9,9 @@ for (let i = 1; i <= 100; i++) {
     }
     const cell = row.insertCell();
     cell.textContent = i;
-    cell.style.padding = '15px'; // Adiciona espaçamento entre as colunas
+    cell.style.padding = '10px'; // Adiciona espaçamento interno
+    cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
+    cell.style.fontWeight = 'bold'; // Define a fonte como negrito
 }
 
 sortearBtn.addEventListener('click', () => {
@@ -37,9 +38,4 @@ sortearBtn.addEventListener('click', () => {
     cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
 
     alert(`Número sorteado: ${numeroSorteado}`);
-});
-
-fontSizeSelect.addEventListener('change', () => {
-    const selectedFontSize = fontSizeSelect.value;
-    bingoTable.style.fontSize = selectedFontSize;
 });
