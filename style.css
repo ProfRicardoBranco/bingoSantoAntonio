@@ -1,20 +1,20 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
-    display: flex;
-    height: 100vh;
-}
-
-.column {
     height: 100%;
 }
 
-#blueColumn {
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.blue-column {
     width: 20%;
     background-color: blue;
 }
 
-#yellowColumn {
+.yellow-column {
     flex: 1;
     background-color: yellow;
 }
