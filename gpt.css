@@ -9,10 +9,7 @@
 
 #buttonColumn {
     float: left;
-    display: flex; /* Adiciona display flex */
-    align-items: center; /* Centraliza verticalmente */
 }
-
 
 #sortearBtn {
     display: block;
@@ -30,8 +27,12 @@
     background-color: #45a049;
 }
 
-#tableColumn {
+#selectorTableColumn {
     float: right;
+}
+
+.selector-row {
+    margin-bottom: 10px; /* Adiciona margem inferior entre o botão e o seletor */
 }
 
 table {

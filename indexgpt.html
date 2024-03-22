@@ -12,14 +12,17 @@
     <!-- Coluna com o botão "Sortear" -->
     <div class="column" id="buttonColumn">
         <button id="sortearBtn">Sortear</button>
-        <label for="enviarAlerta">Enviar alerta?</label>
-        <p></p>
-        <input type="checkbox" id="enviarAlerta" name="enviarAlerta" checked>    
     </div>
 
-    <!-- Coluna com a tabela gerada pelo JavaScript -->
-    <div class="column" id="tableColumn">
-        <table id="bingoTable"></table>
+    <!-- Coluna com o seletor e a tabela gerada pelo JavaScript -->
+    <div class="column" id="selectorTableColumn">
+        <div class="selector-row">
+            <label for="enviarAlerta">Enviar alerta?</label>
+            <input type="checkbox" id="enviarAlerta" name="enviarAlerta" checked>  
+        </div>
+        <div class="table-row">
+            <table id="bingoTable"></table>
+        </div>
     </div>
 </div>
 
@@ -27,3 +30,4 @@
 
 </body>
 </html>
+
