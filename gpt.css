@@ -9,7 +9,10 @@
 
 #buttonColumn {
     float: left;
+    display: flex; /* Adiciona display flex */
+    align-items: center; /* Centraliza verticalmente */
 }
+
 
 #sortearBtn {
     display: block;
