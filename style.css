@@ -1,39 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    border-collapse: collapse;
 }
 
-td {
-    padding: 10px;
-    border: 1px solid #ccc;
+#sortearBtn {
+    margin-right: 20px; /* Espaçamento à direita do botão */
 }
 
-.marked {
-    background-color: #28a745; /* Cor para números sorteados */
+#bingoTable {
+    flex: 1; /* A tabela ocupa o espaço restante */
 }
