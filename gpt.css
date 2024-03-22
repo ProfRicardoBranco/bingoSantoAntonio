@@ -3,11 +3,11 @@
 }
 
 .column {
-    flex: 1;
     padding: 10px;
 }
 
 #buttonSelectorColumn {
+    width: 33%; /* Define a largura da primeira coluna para ocupar um terço do espaço */
     display: flex; /* Adiciona display flex */
     flex-direction: column; /* Coloca os elementos em coluna */
     justify-content: center; /* Centraliza verticalmente */
@@ -19,7 +19,8 @@
 
 #sortearBtn {
     display: block;
-    width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
+    width: 100%; /* O botão ocupa toda a largura da coluna */
+    max-width: 200px; /* Define a largura máxima do botão */
     padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
     margin: 0 auto; /* Centraliza horizontalmente */
     font-size: 16px;
@@ -30,8 +31,13 @@
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 #sortearBtn:hover {
     background-color: #45a049;
+}
+
+#tableColumn {
+    width: 67%; /* Define a largura da segunda coluna para ocupar dois terços do espaço */
 }
 
 table {
