@@ -10,6 +10,7 @@ for (let i = 1; i <= 100; i++) {
     }
     const cell = row.insertCell();
     cell.textContent = i;
+    cell.style.padding = '15px'; // Adiciona espaçamento entre as colunas
 }
 
 sortearBtn.addEventListener('click', () => {
