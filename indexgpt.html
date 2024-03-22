@@ -3,31 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>botão e tabela</title>
-<link rel="stylesheet" href="styles.css">
+<title>Bingo</title>
+<link rel="stylesheet" href="gpt.css">
 </head>
 <body>
 
 <div class="container">
-    <!-- Coluna com botão -->
+    <!-- Coluna com o botão "Sortear" -->
     <div class="column" id="buttonColumn">
-        <button id="myButton">Gerar Tabela</button>
+        <button id="sortearBtn">Sortear</button>
     </div>
 
-    <!-- Coluna com tabela -->
+    <!-- Coluna com a tabela gerada pelo JavaScript -->
     <div class="column" id="tableColumn">
-        <table id="myTable">
-            <thead>
-                <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <!-- Corpo da tabela será preenchido pelo JavaScript -->
-            </tbody>
-        </table>
+        <table id="bingoTable"></table>
     </div>
 </div>
 

@@ -11,7 +11,7 @@
     float: left;
 }
 
-#myButton {
+#sortearBtn {
     display: block;
     width: 100%;
     padding: 10px;
@@ -23,7 +23,7 @@
     border-radius: 5px;
 }
 
-#myButton:hover {
+#sortearBtn:hover {
     background-color: #45a049;
 }
 
@@ -44,4 +44,8 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+}
+
+.marked {
+    background-color: #28a745 !important; /* Altera a cor de fundo das células marcadas */
 }
