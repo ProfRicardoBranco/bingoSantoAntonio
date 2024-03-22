@@ -32,8 +32,7 @@ sortearBtn.addEventListener('click', () => {
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
     
     cell.classList.add('marked');
+    cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
 
-    setTimeout(() => {
-        alert(`Número sorteado: ${numeroSorteado}`);
-    }, 10); // Atraso de 10ms para permitir a atualização visual na tabela
+    alert(`Número sorteado: ${numeroSorteado}`);
 });
