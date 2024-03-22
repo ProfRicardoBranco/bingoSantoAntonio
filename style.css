@@ -11,19 +11,17 @@ body {
     width: 80%; /* Define a largura da container */
 }
 
-.column {
+.left-column {
+    width: 20%; /* Define a largura da primeira coluna */
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-#leftColumn {
-    width: 20%; /* Define a largura da primeira coluna */
-}
-
 #sortearBtn {
-    margin: auto; /* Centraliza verticalmente o botão */
+    width: 80%; /* Define a largura do botão */
 }
 
-#rightColumn {
+.right-column {
     width: 80%; /* Define a largura da segunda coluna */
 }
