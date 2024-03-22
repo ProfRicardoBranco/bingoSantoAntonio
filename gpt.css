@@ -7,8 +7,14 @@
     padding: 10px;
 }
 
-#buttonColumn {
-    float: left;
+#buttonSelectorColumn {
+    display: flex; /* Adiciona display flex */
+    flex-direction: column; /* Coloca os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+.button-selector-wrapper {
+    text-align: center; /* Centraliza horizontalmente */
 }
 
 #sortearBtn {
@@ -21,18 +27,11 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    margin-bottom: 10px; /* Adiciona margem inferior entre o botão e o seletor */
 }
 
 #sortearBtn:hover {
     background-color: #45a049;
-}
-
-#selectorTableColumn {
-    float: right;
-}
-
-.selector-row {
-    margin-bottom: 10px; /* Adiciona margem inferior entre o botão e o seletor */
 }
 
 table {
