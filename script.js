@@ -1,3 +1,19 @@
+const bingoTable = document.getElementById('bingoTable');
+const sortearBtn = document.getElementById('sortearBtn');
+let numerosSorteados = [];
+
+// Preencher a tabela com os números de 1 a 100 em uma grade 10x10
+for (let i = 1; i <= 100; i++) {
+    if ((i - 1) % 10 === 0) {
+        var row = bingoTable.insertRow();
+    }
+    const cell = row.insertCell();
+    cell.textContent = i;
+    cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
+    cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
+    cell.style.fontWeight = 'bold'; // Define a fonte como negrito
+}
+
 sortearBtn.addEventListener('click', () => {
     if (numerosSorteados.length === 100) {
         alert('Todos os números já foram sorteados!');
