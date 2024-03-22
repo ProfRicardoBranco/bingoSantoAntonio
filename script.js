@@ -35,5 +35,5 @@ sortearBtn.addEventListener('click', () => {
 
     setTimeout(() => {
         alert(`Número sorteado: ${numeroSorteado}`);
-    }, 100); // Atraso de 100ms para permitir a atualização visual na tabela
+    }, 10); // Atraso de 10ms para permitir a atualização visual na tabela
 });
