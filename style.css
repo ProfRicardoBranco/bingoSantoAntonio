@@ -13,9 +13,9 @@ body {
 }
 
 #sortearBtn {
-    margin-right: 20px; /* Espaçamento à direita do botão */
+    order: 1; /* Define a ordem do botão para ser o segundo item */
 }
 
 #bingoTable {
-    flex: 1; /* A tabela ocupa o espaço restante */
+    order: 2; /* Define a ordem da tabela para ser o terceiro item */
 }
