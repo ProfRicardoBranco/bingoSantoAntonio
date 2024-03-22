@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Sorteio</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bingo</title>
+<link rel="stylesheet" href="gpt.css">
 </head>
 <body>
-    <section class="container">
-        <div class="left-column">
-            <button id="sortearBtn">Sortear Número</button>
-        </div>
-        <div class="right-column">
-            <table id="bingoTable"></table>
+
+<div class="container">
+    <!-- Coluna com o botão "Sortear" e seletor -->
+    <div class="column" id="buttonSelectorColumn">
+        <div class="button-selector-wrapper">
+            <button id="sortearBtn">Sortear</button>
+            <p></p>
+            <label for="enviarAlerta">Enviar alerta?</label>
+            <input type="checkbox" id="enviarAlerta" name="enviarAlerta" checked>  
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Coluna com a tabela gerada pelo JavaScript -->
+    <div class="column" id="tableColumn">
+        <table id="bingoTable"></table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
