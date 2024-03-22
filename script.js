@@ -31,7 +31,7 @@ sortearBtn.addEventListener('click', () => {
     
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
     
-    cell.classList.add('marked')
+    cell.classList.add('marked');
 
     alert(`Número sorteado: ${numeroSorteado}`);
 });
