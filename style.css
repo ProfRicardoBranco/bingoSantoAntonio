@@ -26,8 +26,14 @@ button:hover {
 
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 td {
     padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.marked {
+    background-color: #28a745; /* Cor para números sorteados */
 }

@@ -2,11 +2,13 @@ const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
 let numerosSorteados = [];
 
-// Preencher a tabela com os números de 1 a 100
+// Preencher a tabela com os números de 1 a 100 em uma grade 10x10
 for (let i = 1; i <= 100; i++) {
-    const cell = document.createElement('td');
+    if ((i - 1) % 10 === 0) {
+        var row = bingoTable.insertRow();
+    }
+    const cell = row.insertCell();
     cell.textContent = i;
-    bingoTable.appendChild(cell);
 }
 
 sortearBtn.addEventListener('click', () => {
@@ -26,5 +28,5 @@ sortearBtn.addEventListener('click', () => {
     const cellIndex = numeroSorteado - 1; // Índice da célula na tabela
     const cell = bingoTable.getElementsByTagName('td')[cellIndex];
     
-    cell.style.backgroundColor = '#007bff';
+    cell.classList.add('marked');
 });
