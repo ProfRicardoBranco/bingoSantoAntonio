@@ -26,7 +26,10 @@ sortearBtn.addEventListener('click', () => {
     numerosSorteados.push(numeroSorteado);
     
     const cellIndex = numeroSorteado - 1; // Índice da célula na tabela
-    const cell = bingoTable.getElementsByTagName('td')[cellIndex];
+    const rowNumber = Math.floor(cellIndex / 10); // Número da linha
+    const colNumber = cellIndex % 10; // Número da coluna
+    
+    const cell = bingoTable.rows[rowNumber].cells[colNumber];
     
     cell.classList.add('marked');
 });
