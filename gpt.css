@@ -7,6 +7,10 @@
     padding: 10px;
 }
 
+#buttonColumn {
+    float: left;
+}
+
 #myButton {
     display: block;
     width: 100%;
@@ -21,6 +25,10 @@
 
 #myButton:hover {
     background-color: #45a049;
+}
+
+#tableColumn {
+    float: right;
 }
 
 table {
