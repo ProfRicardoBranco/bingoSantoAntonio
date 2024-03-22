@@ -33,5 +33,7 @@ sortearBtn.addEventListener('click', () => {
     
     cell.classList.add('marked');
 
-    alert(`Número sorteado: ${numeroSorteado}`);
+    setTimeout(() => {
+        alert(`Número sorteado: ${numeroSorteado}`);
+    }, 100); // Atraso de 100ms para permitir a atualização visual na tabela
 });
