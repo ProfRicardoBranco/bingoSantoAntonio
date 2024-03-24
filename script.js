@@ -39,7 +39,7 @@ sortearBtn.addEventListener('click', () => {
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
     
     cell.classList.add('marked');
-    cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
+    cell.style.backgroundColor = coresLinhas[rowNumber]; // Altera a cor de fundo da célula com base na linha
 
     // Limpa o conteúdo anteriormente adicionado
     numeroSorteadoElement.innerHTML = '';
