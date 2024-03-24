@@ -83,7 +83,7 @@ th {
     padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
     margin: 10px auto; /* Adiciona espaçamento entre os botões e centraliza horizontalmente */
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #eaf20b;
     color: white;
     border: none;
     cursor: pointer;
@@ -92,5 +92,5 @@ th {
 }
 
 #novoJogoBtn:hover {
-    background-color: #45a049;
+    background-color: #c1c806;
 }
