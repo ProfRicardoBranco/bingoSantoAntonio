@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,17 @@
 <body>
 
 <div class="container">
+    <!-- Coluna com a imagem -->
+    <div class="column" id="logoColumn">
+        <img src="LogoSanto.jpg" alt="Logo Santo Antônio">
+    </div>
+
     <!-- Coluna com o botão "Sortear" e mensagem -->
     <div class="column" id="buttonSelectorColumn">
         <div class="button-selector-wrapper">
+            <p>CCM Santo Antônio</p> <!-- Adiciona o texto abaixo da imagem -->
             <button id="sortearBtn">Sortear</button>
-            <p>CCM Santo Antônio</p> <!-- Adiciona o texto abaixo do botão -->
-            <p></p>
-            <p id="numeroSorteado" class="numero-sorteado"></p><p></p> <!-- Aqui será exibido o número sorteado -->
+            <p id="numeroSorteado" class="numero-sorteado"></p> <!-- Aqui será exibido o número sorteado -->
         </div>
     </div>
 
