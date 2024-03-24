@@ -25,7 +25,7 @@
     height: 80px; /* Define a altura do botão */
     padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
     margin: 0 auto 10px auto; /* Centraliza horizontalmente e adiciona espaçamento inferior */
-    font-size: 16px;
+    font-size: 40px;
     background-color: #007bff; /* Cor azul para o botão "Sortear" */
     color: white;
     border: none;
@@ -49,7 +49,7 @@ table {
 
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
