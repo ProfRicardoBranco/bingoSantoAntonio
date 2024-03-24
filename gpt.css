@@ -58,3 +58,11 @@ th {
 .marked {
     background-color: #28a745 !important; /* Altera a cor de fundo das células marcadas */
 }
+
+.numero-sorteado {
+    font-size: 16px; /* Tamanho da fonte padrão */
+}
+
+.numero-sorteado-grande {
+    font-size: 24px; /* Tamanho da fonte para o número sorteado */
+}
