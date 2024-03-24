@@ -10,7 +10,7 @@
     width: 33%; /* Define a largura da primeira coluna para ocupar um terço do espaço */
     display: flex; /* Adiciona display flex */
     flex-direction: column; /* Coloca os elementos em coluna */
-    justify-content: top; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinha os elementos ao topo verticalmente */
 }
 
 .button-selector-wrapper {
@@ -19,12 +19,13 @@
 
 #sortearBtn {
     display: block;
-    width: 100%; /* O botão ocupa toda a largura da coluna */
+    width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
     max-width: 200px; /* Define a largura máxima do botão */
+    height: 80px; /* Define a altura do botão */
     padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto 10px auto; /* Centraliza horizontalmente e adiciona espaçamento inferior */
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #007bff; /* Cor azul para o botão "Sortear" */
     color: white;
     border: none;
     cursor: pointer;
@@ -33,7 +34,7 @@
 }
 
 #sortearBtn:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
 #tableColumn {
@@ -80,11 +81,12 @@ th {
     display: block;
     width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
     max-width: 200px; /* Define a largura máxima do botão */
+    height: 53px; /* 2/3 da altura do botão "Sortear" */
     padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
-    margin: 10px auto; /* Adiciona espaçamento entre os botões e centraliza horizontalmente */
+    margin: 0 auto; /* Centraliza horizontalmente */
     font-size: 16px;
-    background-color: #eaf20b;
-    color: black;
+    background-color: #ff9900; /* Cor laranja para o botão "Novo Jogo" */
+    color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -92,5 +94,5 @@ th {
 }
 
 #novoJogoBtn:hover {
-    background-color: #c1c806;
+    background-color: #e68a00; /* Cor laranja mais escura quando passa o mouse */
 }
