@@ -44,7 +44,7 @@ sortearBtn.addEventListener('click', () => {
 
     // Cria um elemento <p> para exibir o texto "Foi sorteado o número"
     const textoSorteado = document.createElement('p');
-    textoSorteado.textContent = 'Foi sorteado o número';
+    textoSorteado.textContent = 'Foi sorteado o número:';
     textoSorteado.classList.add('numero-sorteado');
     numeroSorteadoElement.appendChild(textoSorteado);
 
