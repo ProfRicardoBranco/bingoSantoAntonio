@@ -16,11 +16,6 @@ for (let i = 1; i <= 100; i++) {
     cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
-
-    // Ajusta a cor da célula de acordo com a linha e a posição do número
-    const linha = Math.floor((i - 1) / 10);
-    const intensidadeCor = (i - 1) % 10;
-    cell.style.backgroundColor = coresLinhas[linha] + intensidadeCor.toString(16).repeat(2); // Incrementa a intensidade da cor conforme avança para a direita
 }
 
 sortearBtn.addEventListener('click', () => {
