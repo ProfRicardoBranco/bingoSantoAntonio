@@ -10,7 +10,7 @@
     width: 33%; /* Define a largura da primeira coluna para ocupar um terço do espaço */
     display: flex; /* Adiciona display flex */
     flex-direction: column; /* Coloca os elementos em coluna */
-    justify-content: center; /* Centraliza verticalmente */
+    justify-content: top; /* Centraliza verticalmente */
 }
 
 .button-selector-wrapper {
