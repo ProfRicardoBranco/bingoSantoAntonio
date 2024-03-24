@@ -2,8 +2,6 @@ const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
 const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
 
-const coresLinhas = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff', '#ff8000', '#8000ff', '#0080ff', '#80ff00'];
-
 // Função para verificar se todos os números já foram sorteados
 function todosSorteados() {
     return numerosSorteados.size === 100;
@@ -57,7 +55,11 @@ for (let i = 1; i <= 100; i++) {
     cell.style.fontSize = '40px';
     cell.style.fontWeight = 'bold';
 
-    const linha = Math.floor((i - 1) / 10);
-    const intensidadeCor = (i - 1) % 10;
-    cell.style.backgroundColor = coresLinhas[linha] + intensidadeCor.toString(16).repeat(2);
+    if (Math.floor((i - 1) / 10) % 2 === 0) {
+        // Se a linha for par, define a cor de fundo como branco
+        cell.style.backgroundColor = '#ffffff';
+    } else {
+        // Se a linha for ímpar, define a cor de fundo como cinza claro
+        cell.style.backgroundColor = '#f2f2f2';
+    }
 }
