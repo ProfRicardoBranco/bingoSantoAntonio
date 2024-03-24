@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
     const maximoBingoInput = document.getElementById('maximoBingoInput');
     
+    // Chamada inicial para desenhar a tabela com o valor padrão (100)
+    reiniciarJogo(parseInt(maximoBingoInput.value));
+
     iniciarJogoBtn.addEventListener('click', () => {
         const maximoBingo = parseInt(maximoBingoInput.value);
 
