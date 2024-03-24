@@ -1,12 +1,12 @@
-const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
-const bingoTable = document.getElementById('bingoTable');
-const sortearBtn = document.getElementById('sortearBtn');
-const novoJogoBtn = document.getElementById('novoJogoBtn');
-const maximoBingoInput = document.getElementById('maximoBingoInput');
-const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
-let maximoBingo = parseInt(maximoBingoInput.value);
-
 document.addEventListener('DOMContentLoaded', function() {
+    const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
+    const sortearBtn = document.getElementById('sortearBtn');
+    const novoJogoBtn = document.getElementById('novoJogoBtn');
+    const bingoTable = document.getElementById('bingoTable');
+    const maximoBingoInput = document.getElementById('maximoBingoInput');
+    let numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
+    let maximoBingo = parseInt(maximoBingoInput.value);
+
     // Chamada inicial para desenhar a tabela com o valor padrão (100)
     reiniciarJogo(maximoBingo);
 
@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         reiniciarJogo(maximoBingo);
+        numerosSorteados = new Set(); // Reinicia o conjunto de números sorteados
     });
 
     sortearBtn.addEventListener('click', () => {
-        if (todosSorteados()) {
+        if (numerosSorteados.size === maximoBingo) {
             alert('Todos os números já foram sorteados!');
             return;
         }
@@ -30,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let numeroSorteado;
 
         do {
-            numeroSorteado = gerarNumeroAleatorio();
+            numeroSorteado = gerarNumeroAleatorio(maximoBingo);
         } while (numerosSorteados.has(numeroSorteado));
 
         numerosSorteados.add(numeroSorteado);
         marcarNumeroSorteado(numeroSorteado);
-
+        
         const enviarAlerta = document.getElementById('enviarAlerta').checked;
         if (enviarAlerta) {
             alert(`Número sorteado: ${numeroSorteado}`);
@@ -44,16 +45,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     novoJogoBtn.addEventListener('click', () => {
         reiniciarJogo(maximoBingo);
+        numerosSorteados = new Set(); // Reinicia o conjunto de números sorteados
     });
 });
 
 // Função para limpar a tabela e reiniciar o jogo
 function reiniciarJogo(maximoBingo) {
+    const bingoTable = document.getElementById('bingoTable');
+
     // Limpa a tabela
     bingoTable.innerHTML = '';
-
-    // Limpa o conjunto de números sorteados
-    numerosSorteados.clear();
 
     // Preenche a tabela novamente
     for (let i = 1; i <= maximoBingo; i++) {
@@ -68,14 +69,9 @@ function reiniciarJogo(maximoBingo) {
     }
 }
 
-// Função para verificar se todos os números já foram sorteados
-function todosSorteados() {
-    return numerosSorteados.size === maximoBingo;
-}
-
 // Função para gerar um número aleatório
-function gerarNumeroAleatorio() {
-    return Math.floor(Math.random() * maximoBingo) + 1;
+function gerarNumeroAleatorio(maximo) {
+    return Math.floor(Math.random() * maximo) + 1;
 }
 
 // Função para marcar o número sorteado na tabela
@@ -83,7 +79,7 @@ function marcarNumeroSorteado(numeroSorteado) {
     const cellIndex = numeroSorteado - 1; // Índice da célula na tabela
     const rowNumber = Math.floor(cellIndex / 10); // Número da linha
     const colNumber = cellIndex % 10; // Número da coluna
-    
+    const bingoTable = document.getElementById('bingoTable');
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
     cell.classList.add('marked');
     cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
