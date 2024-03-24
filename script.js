@@ -1,15 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
-    const bingoTable = document.getElementById('bingoTable');
-    const sortearBtn = document.getElementById('sortearBtn');
-    const novoJogoBtn = document.getElementById('novoJogoBtn');
-    const maximoBingoInput = document.getElementById('maximoBingoInput');
+const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
+const bingoTable = document.getElementById('bingoTable');
+const sortearBtn = document.getElementById('sortearBtn');
+const novoJogoBtn = document.getElementById('novoJogoBtn');
+const maximoBingoInput = document.getElementById('maximoBingoInput');
+const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
+let maximoBingo = parseInt(maximoBingoInput.value);
 
+document.addEventListener('DOMContentLoaded', function() {
     // Chamada inicial para desenhar a tabela com o valor padrão (100)
-    reiniciarJogo(parseInt(maximoBingoInput.value));
+    reiniciarJogo(maximoBingo);
 
     iniciarJogoBtn.addEventListener('click', () => {
-        const maximoBingo = parseInt(maximoBingoInput.value);
+        maximoBingo = parseInt(maximoBingoInput.value);
 
         if (isNaN(maximoBingo) || maximoBingo <= 0) {
             alert('Por favor, insira um número válido para o bingo.');
@@ -41,16 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     novoJogoBtn.addEventListener('click', () => {
-        reiniciarJogo(parseInt(maximoBingoInput.value));
+        reiniciarJogo(maximoBingo);
     });
 });
 
-const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
-
 // Função para limpar a tabela e reiniciar o jogo
 function reiniciarJogo(maximoBingo) {
-    const bingoTable = document.getElementById('bingoTable');
-
     // Limpa a tabela
     bingoTable.innerHTML = '';
 
