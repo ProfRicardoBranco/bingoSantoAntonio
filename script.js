@@ -3,9 +3,6 @@ const sortearBtn = document.getElementById('sortearBtn');
 const numeroSorteadoElement = document.getElementById('numeroSorteado');
 let numerosSorteados = [];
 
-// Define uma paleta de cores para cada linha
-const coresLinhas = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff', '#ff8000', '#8000ff', '#0080ff', '#80ff00'];
-
 // Preencher a tabela com os números de 1 a 100 em uma grade 10x10
 for (let i = 1; i <= 100; i++) {
     if ((i - 1) % 10 === 0) {
@@ -39,7 +36,11 @@ sortearBtn.addEventListener('click', () => {
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
     
     cell.classList.add('marked');
-    cell.style.backgroundColor = coresLinhas[rowNumber]; // Altera a cor de fundo da célula com base na linha
+
+    // Define a cor de fundo da célula com base na linha
+    const linha = rowNumber % 10;
+    const cor = `hsl(${linha * 36}, 100%, 50%)`;
+    cell.style.backgroundColor = cor;
 
     // Limpa o conteúdo anteriormente adicionado
     numeroSorteadoElement.innerHTML = '';
