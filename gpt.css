@@ -1,6 +1,7 @@
 .container {
     display: flex;
     align-items: flex-start; /* Alinha os elementos ao topo da página */
+    padding-top: 50px; /* Adiciona preenchimento na parte superior para afastar o conteúdo do topo da página */
 }
 
 .column {
