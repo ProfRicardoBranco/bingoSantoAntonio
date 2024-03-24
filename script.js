@@ -1,10 +1,40 @@
 const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
+const novoJogoBtn = document.getElementById('novoJogoBtn');
 const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
 
 // Função para verificar se todos os números já foram sorteados
 function todosSorteados() {
     return numerosSorteados.size === 100;
+}
+
+// Função para limpar a tabela e reiniciar o jogo
+function reiniciarJogo() {
+    // Limpa a tabela
+    bingoTable.innerHTML = '';
+
+    // Limpa o conjunto de números sorteados
+    numerosSorteados.clear();
+
+    // Preenche a tabela novamente
+    for (let i = 1; i <= 100; i++) {
+        if ((i - 1) % 10 === 0) {
+            var row = bingoTable.insertRow();
+        }
+        const cell = row.insertCell();
+        cell.textContent = i;
+        cell.style.padding = '5px 10px';
+        cell.style.fontSize = '40px';
+        cell.style.fontWeight = 'bold';
+
+        if (Math.floor((i - 1) / 10) % 2 === 0) {
+            // Se a linha for par, define a cor de fundo como branco
+            cell.style.backgroundColor = '#ffffff';
+        } else {
+            // Se a linha for ímpar, define a cor de fundo como cinza claro
+            cell.style.backgroundColor = '#f2f2f2';
+        }
+    }
 }
 
 // Função para gerar um número aleatório
@@ -44,22 +74,6 @@ sortearBtn.addEventListener('click', () => {
     }
 });
 
-// Preencher a tabela com os números de 1 a 100 em uma grade 10x10
-for (let i = 1; i <= 100; i++) {
-    if ((i - 1) % 10 === 0) {
-        var row = bingoTable.insertRow();
-    }
-    const cell = row.insertCell();
-    cell.textContent = i;
-    cell.style.padding = '5px 10px';
-    cell.style.fontSize = '40px';
-    cell.style.fontWeight = 'bold';
-
-    if (Math.floor((i - 1) / 10) % 2 === 0) {
-        // Se a linha for par, define a cor de fundo como branco
-        cell.style.backgroundColor = '#ffffff';
-    } else {
-        // Se a linha for ímpar, define a cor de fundo como cinza claro
-        cell.style.backgroundColor = '#f2f2f2';
-    }
-}
+novoJogoBtn.addEventListener('click', () => {
+    reiniciarJogo();
+});
