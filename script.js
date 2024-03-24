@@ -1,3 +1,5 @@
+const maximoBingo = 100; // Definindo o número máximo do bingo
+
 document.addEventListener('DOMContentLoaded', function() {
     reiniciarJogo();
 });
@@ -9,7 +11,7 @@ const numerosSorteados = new Set(); // Usando um conjunto para garantir números
 
 // Função para verificar se todos os números já foram sorteados
 function todosSorteados() {
-    return numerosSorteados.size === 100;
+    return numerosSorteados.size === maximoBingo;
 }
 
 // Função para limpar a tabela e reiniciar o jogo
@@ -21,7 +23,7 @@ function reiniciarJogo() {
     numerosSorteados.clear();
 
     // Preenche a tabela novamente
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= maximoBingo; i++) {
         if ((i - 1) % 10 === 0) {
             var row = bingoTable.insertRow();
         }
@@ -43,7 +45,7 @@ function reiniciarJogo() {
 
 // Função para gerar um número aleatório
 function gerarNumeroAleatorio() {
-    return Math.floor(Math.random() * 100) + 1;
+    return Math.floor(Math.random() * maximoBingo) + 1;
 }
 
 // Função para marcar o número sorteado na tabela
