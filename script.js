@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     reiniciarJogo(maximoBingo);
 
     iniciarJogoBtn.addEventListener('click', () => {
+        alert('Botão Iniciar Jogo clicado');
         maximoBingo = parseInt(maximoBingoInput.value);
 
         if (isNaN(maximoBingo) || maximoBingo <= 0) {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     sortearBtn.addEventListener('click', () => {
+        alert('Botão Sortear clicado');
         if (numerosSorteados.size === maximoBingo) {
             alert('Todos os números já foram sorteados!');
             return;
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     novoJogoBtn.addEventListener('click', () => {
+        alert('Botão Novo Jogo clicado');
         reiniciarJogo(maximoBingo);
         numerosSorteados = new Set(); // Reinicia o conjunto de números sorteados
     });
