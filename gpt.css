@@ -16,7 +16,9 @@
 
 .button-selector-wrapper {
     text-align: center; /* Centraliza horizontalmente */
+    padding-bottom: 30px; /* Adiciona espaçamento entre a imagem e o botão "Sortear" */
 }
+
 
 #sortearBtn {
     display: block;
