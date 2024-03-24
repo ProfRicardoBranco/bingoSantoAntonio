@@ -54,3 +54,34 @@ sortearBtn.addEventListener('click', () => {
     numeroSorteadoSpan.classList.add('numero-sorteado-grande');
     numeroSorteadoElement.appendChild(numeroSorteadoSpan);
 });
+
+// Seleciona o botão "Novo Jogo"
+const novoJogoBtn = document.getElementById('novoJogoBtn');
+
+// Adiciona um ouvinte de eventos de clique ao botão "Novo Jogo"
+novoJogoBtn.addEventListener('click', () => {
+    // Reinicia as variáveis do jogo e limpa as marcações
+    resetarJogo();
+});
+
+// Função para reiniciar o jogo
+function resetarJogo() {
+    // Limpa a tabela
+    limparTabela();
+    
+    // Reinicia as variáveis
+    numerosSorteados = [];
+    // Limpa o texto de número sorteado
+    const numeroSorteadoElement = document.getElementById('numeroSorteado');
+    numeroSorteadoElement.textContent = '';
+}
+
+// Função para limpar a tabela (remover marcações)
+function limparTabela() {
+    // Remove a classe 'marked' de todas as células da tabela
+    const cells = document.querySelectorAll('#bingoTable td');
+    cells.forEach(cell => {
+        cell.classList.remove('marked');
+        cell.style.backgroundColor = ''; // Limpa a cor de fundo
+    });
+}
