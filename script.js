@@ -46,11 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     novoJogoBtn.addEventListener('click', () => {
+        maximoBingo = parseInt(maximoBingoInput.value);
         alert('Botão Novo Jogo clicado');
         reiniciarJogo(maximoBingo);
         numerosSorteados = new Set(); // Reinicia o conjunto de números sorteados
     });
 });
+
 
 // Função para limpar a tabela e reiniciar o jogo
 function reiniciarJogo(maximoBingo) {
