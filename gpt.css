@@ -60,9 +60,9 @@ th {
 }
 
 .numero-sorteado {
-    font-size: 16px; /* Tamanho da fonte padrão */
+    font-size: 30px; /* Tamanho da fonte padrão */
 }
 
 .numero-sorteado-grande {
-    font-size: 24px; /* Tamanho da fonte para o número sorteado */
+    font-size: 50px; /* Tamanho da fonte para o número sorteado */
 }
