@@ -60,10 +60,11 @@ th {
 }
 
 .numero-sorteado {
+    padding: 0 10%;
     font-size: 30px; /* Tamanho da fonte padrão */
 }
 
 .numero-sorteado-grande {
-    padding: 10%;
+    padding: 0 10%;
     font-size: 50px; /* Tamanho da fonte para o número sorteado */
 }
