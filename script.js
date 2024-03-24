@@ -38,11 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         numerosSorteados.add(numeroSorteado);
         marcarNumeroSorteado(numeroSorteado);
-        
-        const enviarAlerta = document.getElementById('enviarAlerta').checked;
-        if (enviarAlerta) {
-            alert(`Número sorteado: ${numeroSorteado}`);
-        }
     });
 
     novoJogoBtn.addEventListener('click', () => {
