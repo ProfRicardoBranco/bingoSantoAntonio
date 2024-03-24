@@ -3,6 +3,9 @@ const sortearBtn = document.getElementById('sortearBtn');
 const numeroSorteadoElement = document.getElementById('numeroSorteado');
 let numerosSorteados = [];
 
+// Define uma paleta de cores para cada linha
+const coresLinhas = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff', '#ff8000', '#8000ff', '#0080ff', '#80ff00'];
+
 // Preencher a tabela com os números de 1 a 100 em uma grade 10x10
 for (let i = 1; i <= 100; i++) {
     if ((i - 1) % 10 === 0) {
@@ -13,8 +16,12 @@ for (let i = 1; i <= 100; i++) {
     cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
-}
 
+    // Ajusta a cor da célula de acordo com a linha e a posição do número
+    const linha = Math.floor((i - 1) / 10);
+    const intensidadeCor = (i - 1) % 10;
+    cell.style.backgroundColor = coresLinhas[linha] + intensidadeCor.toString(16).repeat(2); // Incrementa a intensidade da cor conforme avança para a direita
+}
 
 sortearBtn.addEventListener('click', () => {
     if (numerosSorteados.length === 100) {
