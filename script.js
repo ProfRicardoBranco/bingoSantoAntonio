@@ -7,12 +7,24 @@ let numerosSorteados = [];
 for (let i = 1; i <= 100; i++) {
     if ((i - 1) % 10 === 0) {
         var row = bingoTable.insertRow();
+        row.classList.add(`linha-${Math.floor(i / 10)}`);
     }
     const cell = row.insertCell();
     cell.textContent = i;
     cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
+}
+
+// Adiciona o CSS dinamicamente
+const style = document.createElement('style');
+document.head.appendChild(style);
+const sheet = style.sheet;
+
+// Adiciona regras CSS para cada linha da tabela
+for (let i = 0; i < 10; i++) {
+    const linhaRule = `.linha-${i} .marked { background-color: ${getRandomColor()}; }`;
+    sheet.insertRule(linhaRule);
 }
 
 sortearBtn.addEventListener('click', () => {
@@ -33,15 +45,16 @@ sortearBtn.addEventListener('click', () => {
     const rowNumber = Math.floor(cellIndex / 10); // Número da linha
     const colNumber = cellIndex % 10; // Número da coluna
     
+    // Remove a classe 'marked' de todas as células
+    const markedCells = document.querySelectorAll('.marked');
+    markedCells.forEach(cell => {
+        cell.classList.remove('marked');
+    });
+
+    // Adiciona a classe 'marked' à célula sorteada
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
-    
     cell.classList.add('marked');
-
-    // Define a cor de fundo da célula com base na linha
-    const linha = rowNumber % 10;
-    const cor = `hsl(${linha * 36}, 100%, 50%)`;
-    cell.style.backgroundColor = cor;
-
+    
     // Limpa o conteúdo anteriormente adicionado
     numeroSorteadoElement.innerHTML = '';
 
@@ -82,9 +95,18 @@ function resetarJogo() {
 // Função para limpar a tabela (remover marcações)
 function limparTabela() {
     // Remove a classe 'marked' de todas as células da tabela
-    const cells = document.querySelectorAll('#bingoTable td');
-    cells.forEach(cell => {
+    const markedCells = document.querySelectorAll('.marked');
+    markedCells.forEach(cell => {
         cell.classList.remove('marked');
-        cell.style.backgroundColor = ''; // Limpa a cor de fundo
     });
+}
+
+// Função auxiliar para gerar cores aleatórias
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
