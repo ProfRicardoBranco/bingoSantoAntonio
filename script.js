@@ -39,5 +39,5 @@ sortearBtn.addEventListener('click', () => {
     cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
 
     // Atualiza o texto para exibir o número sorteado em uma segunda linha e aumenta o tamanho da fonte
-    numeroSorteadoElement.innerHTML = `Foi sorteado o número <br><span class="numero-sorteado-grande">${numeroSorteado}</span>`;
+    numeroSorteadoElement.innerHTML = `\nFoi sorteado o número <br><span class="numero-sorteado-grande">${numeroSorteado}</span>`;
 });
