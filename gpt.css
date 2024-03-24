@@ -68,3 +68,7 @@ th {
     margin-top: 50px; /* Adiciona um espaçamento superior de 10px */
     font-size: 80px; /* Tamanho da fonte para o número sorteado */
 }
+
+.logoimagem{
+    width:50%;
+}
