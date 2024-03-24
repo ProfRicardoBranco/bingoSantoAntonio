@@ -3,28 +3,19 @@ const sortearBtn = document.getElementById('sortearBtn');
 const numeroSorteadoElement = document.getElementById('numeroSorteado');
 let numerosSorteados = [];
 
+// Define uma paleta de cores para cada linha
+const coresLinhas = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff', '#ff8000', '#8000ff', '#0080ff', '#80ff00'];
+
 // Preencher a tabela com os números de 1 a 100 em uma grade 10x10
 for (let i = 1; i <= 100; i++) {
     if ((i - 1) % 10 === 0) {
         var row = bingoTable.insertRow();
-        row.classList.add(`linha-${Math.floor(i / 10)}`);
     }
     const cell = row.insertCell();
     cell.textContent = i;
     cell.style.padding = '5px 10px'; // Adiciona espaçamento interno
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
-}
-
-// Adiciona o CSS dinamicamente
-const style = document.createElement('style');
-document.head.appendChild(style);
-const sheet = style.sheet;
-
-// Adiciona regras CSS para cada linha da tabela
-for (let i = 0; i < 10; i++) {
-    const linhaRule = `.linha-${i} .marked { background-color: ${getRandomColor()}; }`;
-    sheet.insertRule(linhaRule);
 }
 
 sortearBtn.addEventListener('click', () => {
@@ -45,16 +36,11 @@ sortearBtn.addEventListener('click', () => {
     const rowNumber = Math.floor(cellIndex / 10); // Número da linha
     const colNumber = cellIndex % 10; // Número da coluna
     
-    // Remove a classe 'marked' de todas as células
-    const markedCells = document.querySelectorAll('.marked');
-    markedCells.forEach(cell => {
-        cell.classList.remove('marked');
-    });
-
-    // Adiciona a classe 'marked' à célula sorteada
     const cell = bingoTable.rows[rowNumber].cells[colNumber];
-    cell.classList.add('marked');
     
+    cell.classList.add('marked');
+  
+
     // Limpa o conteúdo anteriormente adicionado
     numeroSorteadoElement.innerHTML = '';
 
@@ -95,18 +81,9 @@ function resetarJogo() {
 // Função para limpar a tabela (remover marcações)
 function limparTabela() {
     // Remove a classe 'marked' de todas as células da tabela
-    const markedCells = document.querySelectorAll('.marked');
-    markedCells.forEach(cell => {
+    const cells = document.querySelectorAll('#bingoTable td');
+    cells.forEach(cell => {
         cell.classList.remove('marked');
+        cell.style.backgroundColor = ''; // Limpa a cor de fundo
     });
-}
-
-// Função auxiliar para gerar cores aleatórias
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
 }
