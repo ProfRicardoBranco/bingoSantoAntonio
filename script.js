@@ -53,12 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-novoJogoBtn.addEventListener('click', () => {
-
-    reiniciarJogo();
-    numerosSorteados.clear(); // Limpa o conjunto de números sorteados
-});
-
 // Função para limpar a tabela e reiniciar o jogo
 function reiniciarJogo(maximoBingo) {
     const bingoTable = document.getElementById('bingoTable');
