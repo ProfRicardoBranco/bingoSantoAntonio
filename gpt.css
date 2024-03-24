@@ -64,5 +64,6 @@ th {
 }
 
 .numero-sorteado-grande {
+    padding: 10%;
     font-size: 50px; /* Tamanho da fonte para o número sorteado */
 }
