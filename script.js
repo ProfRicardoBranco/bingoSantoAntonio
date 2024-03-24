@@ -1,5 +1,6 @@
 const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
+const numeroSorteadoElement = document.getElementById('numeroSorteado');
 let numerosSorteados = [];
 
 // Preencher a tabela com os números de 1 a 100 em uma grade 10x10
@@ -41,4 +42,7 @@ sortearBtn.addEventListener('click', () => {
     if (enviarAlerta) {
         alert(`Número sorteado: ${numeroSorteado}`);
     }
+
+    // Atualiza o texto para exibir o número sorteado
+    numeroSorteadoElement.textContent = `Foi sorteado o número ${numeroSorteado}`;
 });
