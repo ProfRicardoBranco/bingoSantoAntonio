@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         reiniciarJogo(maximoBingo);
         numerosSorteados = new Set(); // Reinicia o conjunto de números sorteados
     });
-});
+
 
 
 // Função para limpar a tabela e reiniciar o jogo
