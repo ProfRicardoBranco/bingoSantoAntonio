@@ -74,3 +74,23 @@ th {
     margin: auto; /* Centralize horizontalmente */
     display: block; /* Garanta que a imagem seja exibida como um bloco para aplicar o margin: auto corretamente */
 }
+
+
+#novoJogoBtn {
+    display: block;
+    width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
+    max-width: 200px; /* Define a largura máxima do botão */
+    padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
+    margin: 10px auto; /* Adiciona espaçamento entre os botões e centraliza horizontalmente */
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#novoJogoBtn:hover {
+    background-color: #45a049;
+}
