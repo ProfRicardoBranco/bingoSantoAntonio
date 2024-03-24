@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+    reiniciarJogo();
+});
+
 const bingoTable = document.getElementById('bingoTable');
 const sortearBtn = document.getElementById('sortearBtn');
 const novoJogoBtn = document.getElementById('novoJogoBtn');
