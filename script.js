@@ -14,6 +14,8 @@ for (let i = 1; i <= 100; i++) {
     cell.style.fontSize = '40px'; // Define o tamanho da fonte como 40
     cell.style.fontWeight = 'bold'; // Define a fonte como negrito
 }
+
+
 sortearBtn.addEventListener('click', () => {
     if (numerosSorteados.length === 100) {
         alert('Todos os números já foram sorteados!');
@@ -36,6 +38,9 @@ sortearBtn.addEventListener('click', () => {
     
     cell.classList.add('marked');
     cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
+
+    // Limpa o conteúdo anteriormente adicionado
+    numeroSorteadoElement.innerHTML = '';
 
     // Cria um elemento <p> para exibir o texto "Foi sorteado o número"
     const textoSorteado = document.createElement('p');
