@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const iniciarJogoBtn = document.getElementById('iniciarJogoBtn');
+    const bingoTable = document.getElementById('bingoTable');
+    const sortearBtn = document.getElementById('sortearBtn');
+    const novoJogoBtn = document.getElementById('novoJogoBtn');
     const maximoBingoInput = document.getElementById('maximoBingoInput');
-    
+
     // Chamada inicial para desenhar a tabela com o valor padrão (100)
     reiniciarJogo(parseInt(maximoBingoInput.value));
 
@@ -15,13 +18,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
         reiniciarJogo(maximoBingo);
     });
+
+    sortearBtn.addEventListener('click', () => {
+        if (todosSorteados()) {
+            alert('Todos os números já foram sorteados!');
+            return;
+        }
+
+        let numeroSorteado;
+
+        do {
+            numeroSorteado = gerarNumeroAleatorio();
+        } while (numerosSorteados.has(numeroSorteado));
+
+        numerosSorteados.add(numeroSorteado);
+        marcarNumeroSorteado(numeroSorteado);
+
+        const enviarAlerta = document.getElementById('enviarAlerta').checked;
+        if (enviarAlerta) {
+            alert(`Número sorteado: ${numeroSorteado}`);
+        }
+    });
+
+    novoJogoBtn.addEventListener('click', () => {
+        reiniciarJogo(parseInt(maximoBingoInput.value));
+    });
 });
 
-const bingoTable = document.getElementById('bingoTable');
 const numerosSorteados = new Set(); // Usando um conjunto para garantir números únicos
 
 // Função para limpar a tabela e reiniciar o jogo
 function reiniciarJogo(maximoBingo) {
+    const bingoTable = document.getElementById('bingoTable');
+
     // Limpa a tabela
     bingoTable.innerHTML = '';
 
@@ -39,4 +68,25 @@ function reiniciarJogo(maximoBingo) {
         cell.style.fontSize = '40px';
         cell.style.fontWeight = 'bold';
     }
+}
+
+// Função para verificar se todos os números já foram sorteados
+function todosSorteados() {
+    return numerosSorteados.size === maximoBingo;
+}
+
+// Função para gerar um número aleatório
+function gerarNumeroAleatorio() {
+    return Math.floor(Math.random() * maximoBingo) + 1;
+}
+
+// Função para marcar o número sorteado na tabela
+function marcarNumeroSorteado(numeroSorteado) {
+    const cellIndex = numeroSorteado - 1; // Índice da célula na tabela
+    const rowNumber = Math.floor(cellIndex / 10); // Número da linha
+    const colNumber = cellIndex % 10; // Número da coluna
+    
+    const cell = bingoTable.rows[rowNumber].cells[colNumber];
+    cell.classList.add('marked');
+    cell.style.backgroundColor = '#28a745'; // Altera a cor de fundo da célula
 }
