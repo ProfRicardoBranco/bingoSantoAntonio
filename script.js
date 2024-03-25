@@ -73,9 +73,16 @@ sortearBtn.addEventListener('click', () => {
 
     numerosSorteados.add(numeroSorteado);
     marcarNumeroSorteado(numeroSorteado);
+    atualizarNumeroSorteado(numeroSorteado);
 });
 
 novoJogoBtn.addEventListener('click', () => {
     reiniciarJogo();
 });
 
+const numeroSorteadoText = document.getElementById('numeroSorteado');
+
+// Função para atualizar o texto com o número sorteado na tela
+function atualizarNumeroSorteado(numero) {
+    numeroSorteadoText.textContent = "O número sorteado foi: " + numero;
+}
