@@ -84,5 +84,6 @@ const numeroSorteadoText = document.getElementById('numeroSorteado');
 
 // Função para atualizar o texto com o número sorteado na tela
 function atualizarNumeroSorteado(numero) {
-    numeroSorteadoText.textContent = "O número sorteado foi: " + numero;
+    numeroSorteadoText.innerHTML = "O número sorteado foi: <br/>" + numero;
+    numeroSorteadoText.style.fontSize = "24px"; // Define o tamanho da fonte
 }
