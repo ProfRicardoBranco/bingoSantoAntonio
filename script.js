@@ -78,6 +78,7 @@ sortearBtn.addEventListener('click', () => {
 
 novoJogoBtn.addEventListener('click', () => {
     reiniciarJogo();
+    numeroSorteadoText.innerHTML = ""; // Limpa o conteúdo do elemento
 });
 
 const numeroSorteadoText = document.getElementById('numeroSorteado');
@@ -85,7 +86,7 @@ const numeroSorteadoText = document.getElementById('numeroSorteado');
 // Função para atualizar o texto com o número sorteado na tela
 function atualizarNumeroSorteado(numero) {
     numeroSorteadoText.innerHTML = "<span style='font-size: 30px;'>O número sorteado foi:</span><br/>" + 
-                                   "<span style='font-size: 50px; font-weight: bold; color: green;'>" + 
+                                   "<span style='font-size: 70px; font-weight: bold; color: green;'>" + 
                                    numero + 
                                    "</span>";
 }
