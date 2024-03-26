@@ -1,4 +1,4 @@
-const maximoBingo = 100; // Definindo o número máximo do bingo
+const maximoBingo = 75; // Definindo o número máximo do bingo
 
 document.addEventListener('DOMContentLoaded', function() {
     reiniciarJogo();
