@@ -84,8 +84,6 @@ th {
 
 #novoJogoBtn {
     display: block;
-    position: absolute; /* Torna o posicionamento absoluto */
-    top: 00%; /* Move o elemento para 50% da altura do elemento pai */
     width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
     max-width: 200px; /* Define a largura máxima do botão */
     height: 23px; /* 2/3 da altura do botão "Sortear" */
