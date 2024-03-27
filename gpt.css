@@ -84,10 +84,12 @@ th {
 
 #novoJogoBtn {
     display: block;
+    position: absolute; /* Torna o posicionamento absoluto */
+    top: 50%; /* Move o elemento para 50% da altura do elemento pai */
     width: calc(100% / 3); /* Define a largura para ocupar um terço da coluna */
     max-width: 200px; /* Define a largura máxima do botão */
-    height: 33px; /* 2/3 da altura do botão "Sortear" */
-    padding: 20px 0; /* Aumenta a altura do botão e remove o padding horizontal */
+    height: 23px; /* 2/3 da altura do botão "Sortear" */
+    padding: 5px 0; /* Aumenta a altura do botão e remove o padding horizontal */
     margin: 0 auto; /* Centraliza horizontalmente */
     font-size: 16px;
     background-color: #ff9900; /* Cor laranja para o botão "Novo Jogo" */
