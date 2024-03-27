@@ -10,10 +10,10 @@ body {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: auto;
-    grid-column-gap: 20px
-    grid-row-gap: 20px
-    justify-items: stretch
-    align-items: stretch
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
  }
 
 #sortearBtn {
