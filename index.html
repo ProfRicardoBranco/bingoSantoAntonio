@@ -9,12 +9,14 @@
 <body>
 
 <div class="container">
-    <!-- Coluna com a imagem, botão, textos e botão "Novo Jogo" -->
+    <!-- Coluna com o botão "Novo Jogo" -->
     <div class="column" id="buttonSelectorColumn">
+        <button id="novoJogoBtn">Novo Jogo</button> <!-- Movido o botão "Novo Jogo" para cima -->
+        <!-- Colocado a logo abaixo do botão "Novo Jogo" -->
         <img src="LogoSanto.jpg" alt="Logo Santo Antônio" class="logo-imagem"> <!-- Adiciona a imagem -->
-            <div class="button-selector-wrapper">
+        <!-- Colocado a div dos botões de sorteio abaixo da logo -->
+        <div class="button-selector-wrapper">
             <button id="sortearBtn">Sortear</button> <!-- Adiciona o botão "Sortear" -->
-            <button id="novoJogoBtn">Novo Jogo</button> <!-- Adiciona o botão "Novo Jogo" -->
             <p> </p> <!-- Adiciona linha em branco abaixo dos botões -->
             <p id="numeroSorteado" class="numero-sorteado"></p> <!-- Aqui será exibido o número sorteado -->
         </div>
